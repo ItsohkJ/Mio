@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>miu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset='UTF-8' />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      body {
+        background: #e6e6fa;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-family: Monospace;
+        flex-direction: column;
+      }
+      
+      .container{
+        background: #cbc3e3;
+        border-radius: 50px;
+        width: 16rem;
+        margin-bottom: 10px;
+      }
+      input {
+        width: 12em;
+        border-radius: 5px;
+        padding: 5px;
+        border: solid 1px purple;
+        margin: 10px auto;
+      }
+      .regForm {
+        padding: 2rem 2rem 1rem 2rem;
+      }
+      a {
+        color: purple;
+        text-decoration: none;
+      }
+            
+      .btn {
+        margin: 10px;
+        padding: 8px;
+        background-color: rgba(210, 145, 255, 0.5);
+        border-radius: 5px;
+        border: none;
+        }
+        .gender {
+          display: flex;
+          justify-content: center;
+          
+        }
+       .error {
+            margin-bottom: 5px;
+          }  
+      
+      
+    </style>
+  </head>
+  <body>
+    
+    <h1>Glad to see you here!!</h1>
+    <%if (messages.error) {%>
+    <div class="error"><%=messages.error%></div>
+    <%}%>
+    <div class="container">
+    
+    <div>
+      <form class="regForm" action="/register" method="post">
+        <label for="name">Your Name:</label><br />
+        <input type="text" name="username" /><br />
+        <label for="email">Your Email:</label><br />
+        <input type="email" name="email" required /><br />
+        <label for="password">Password:</label><br />
+        <input type="password" name="password" required /><br />
+        <div class="gender">
+          <div>
+            <input type="radio" value="male" name="gender" />
+            <label for="male">♂️</label>
+          </div>
+          <div>
+          <input type="radio" value="female" name="gender" />
+          <label for="female">♀️</label>
+          </div>
+        </div>
+        <button class="btn">Sign Up</button>
+      </form>
+    </div>
+    </div>
+    Already have account? <a href="/">Sign In!</a>
+  </body>
+</html>
